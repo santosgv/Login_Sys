@@ -33,7 +33,7 @@ namespace Login_Sys
         private void btLogin_Click(object sender, EventArgs e)
         {
            
-            SqlCommand conn = new SqlCommand("select login,Password from login where situacao=1 and login =('@login') and Password =('@Password')", sql);
+            SqlCommand conn = new SqlCommand("select login,Password from login where situacao=1 and login =(@login) and Password =(@Password)", sql);
             conn.Parameters.Add("@login", SqlDbType.Char).Value = Entlogin.Text;
             conn.Parameters.Add("@Password", SqlDbType.Char).Value = entSenha.Text;
 
@@ -43,13 +43,20 @@ namespace Login_Sys
                 sql.Open();
                 reader = conn.ExecuteReader();
                 reader.Read();
-          
+
+                if (reader.GetString(0)==Entlogin.Text)
+                {
+                    MessageBox.Show("Login aceito com Sucesso");
+                    Entlogin.Text="";
+                    entSenha.Text="";
+                    sql.Close();
+                }
                
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Login Ou senha Invalidos");
             }
             finally
             {

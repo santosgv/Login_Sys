@@ -79,6 +79,7 @@
             // 
             this.entSenha.Location = new System.Drawing.Point(139, 240);
             this.entSenha.Name = "entSenha";
+            this.entSenha.PasswordChar = '*';
             this.entSenha.Size = new System.Drawing.Size(180, 20);
             this.entSenha.TabIndex = 4;
             // 
@@ -102,8 +103,9 @@
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.Lbsenha);
             this.Controls.Add(this.Lblogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
