@@ -1,0 +1,6 @@
+create table [login](
+[userID]primary key identity int,
+[Login]varchar(20),
+[Password]varchar(20),
+[Situacao]bit
+);
