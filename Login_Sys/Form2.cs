@@ -42,7 +42,7 @@ namespace Login_Sys
             {
                 sql.Open();
                 reader = conn.ExecuteReader();
-                while (reader.Read()) ;
+                reader.Read();
           
                
 
